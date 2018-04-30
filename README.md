@@ -29,7 +29,7 @@ export PATH=$PATH:$HOME/bin
 ```
 4. Download the `dbxcli` binary for OSX and rename it.  *IMPORTANT:* Check that the tag `v2.0.9` on the URL below is the latest release tag on the [Releases](https://github.com/dropbox/dbxcli/releases) page.
 ```sh
-$ wget https://github.com/dropbox/dbxcli/releases/download/v2.0.9/dbxcli-darwin-amd64 
+$ wget https://github.com/dropbox/dbxcli/releases/download/v2.0.9/dbxcli-darwin-amd64
 $ mv dbxcli-darwin-amd64 dbxcli
 ```
 5. Finally, make the binary an executable file and you are good to go!
@@ -40,19 +40,21 @@ $ chmod +x dbxcli
 ### Instructions for building yourself
 For newcomers the go build process can be a bit arcane, these steps can be followed to build `dbxcli` yourself.
 
-1. Make sure `git`, `go`, and `gox` are installed. 
-2. Create a Go folder. For example, `mkdir $HOME/go` or `mkdir $HOME/.go`. Navigate to it.
-3. `go get github.com/dropbox/dbxcli`. That's right, you don't manually clone it, this does it for you.
-4. `cd ~/go/src/github.com/dropbox/dbxcli` (adapt accordingly based on step 2).
+1. Make sure `git`, `go`, and `gox` are installed.
+2. Set `GOPATH` in your bash_profile. For example, `mkdir $HOME/go` or `mkdir $HOME/.go`. Navigate to it.
+3. `go get github.com/banool/dbxcli`. That's right, you don't manually clone it, this does it for you.
+4. `cd ~/go/src/github.com/banool/dbxcli` (adapt accordingly based on step 2).
 
-Now we need to pause for a second to get development keys. 
+Change `banool` to `dropbox` for the regular version with the createlink stuff.
+
+Now we need to pause for a second to get development keys.
 
 5. Head to `https://www.dropbox.com/developers/apps` (sign in if necessary) and choose "Create app". Use the Dropbox API and give it Full Dropbox access. Name and create the app.
 6. You'll be presented with a dashboard with an "App key" and an "App secret".
 7. Replace the value for `personalAppKey` in  `root.go` with the key from the webpage.
 8. Replace the value for `personalAppSecret` with the secret from the webpage.
 
-Finally we're ready to build. Run `go build`, and you'll see a `dbxcli` binary has been created in the current directory. Congrats, we're done!
+Finally we're ready to build. Run `go build`, and you'll see a `dbxcli` binary has been created in the current directory. Congrats, we're done! You can copy the binary to `/usr/local/bin` or something like that.
 
 ## Usage
 
@@ -120,7 +122,7 @@ So please, file feature requests, report bugs or better yet, send us pull reques
  * Step 1: If you're submitting a non-trivial change, please fill out the [Dropbox Contributor License Agreement](https://opensource.dropbox.com/cla/) first.
  * Step 2: send a [pull request](https://help.github.com/articles/using-pull-requests/)
  * Step 3: Profit!
- 
+
 ## Useful Resources
 
 * [Go SDK documentation](https://godoc.org/github.com/dropbox/dropbox-sdk-go-unofficial)
