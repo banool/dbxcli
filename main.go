@@ -40,7 +40,7 @@ var versionCmd = &cobra.Command{
 func init() {
 	// Log date, time and file information by default
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
-	cmd.RootCmd.AddCommand(versionCmd)
+	// cmd.RootCmd.AddCommand(versionCmd)
 }
 
 func main() {
